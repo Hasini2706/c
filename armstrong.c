@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<math.h>
+int findArmstrongnumber(int);
+int findArmstrongnumber(int n)
+{
+		int digits=(int)log10(n)+1;
+		int rem,sum=0;
+	while(n>0)
+	{
+	    rem=n%10;
+	    sum=sum+(int)pow(rem,digits);
+	    n=n/10;
+	}
+	return sum;
+}
+int main()
+{
+	int n,res;
+	scanf("%d",&n);
+	res=findArmstrongnumber(n);
+	if(n==res)
+	{
+		printf("given number is armstrong number");
+	}
+	else{
+		printf("given number is not armstrong number");
+	}
+	return 0;
+}
